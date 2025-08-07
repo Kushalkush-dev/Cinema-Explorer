@@ -25,24 +25,20 @@ const App = () => {
   const fetchmoviedata=async (query='')=>{
     setisloading(true)
     try {
-      const endpoint = query?`${API_BASE_URL}/search/movie?/query=${encodeURIComponent(query)}`: `${API_BASE_URL}/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
+      const endpoint = query?`${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`: `${API_BASE_URL}/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
       const response = await fetch(endpoint, API_OPTIONS);
-     if(!response.ok){
-      throw new Error('Error fetching movies');
-     }
+      if(!response.ok){
+        throw new Error('Error fetching movies');
+      }
       const data = await response.json();
-
-      if(data.results==='false' || data.results.length===0){
+      seterrormessage('')
+      if(!data.results || data.results.length===0){
         seterrormessage('No movies found.');
         setmoviedata([])
         return;
       }
       setmoviedata(data.results || [])
       console.log(data);
-      setisloading(false)
-
-
-
     } catch (error) {
       seterrormessage('Error fetching movies. Try again');
       console.error('Error fetching movies:', error);
