@@ -1,10 +1,11 @@
 import React, { use, useEffect, useState } from 'react'
 import Search from './components/Search.jsx'
 import Spinnerloader from './components/Spinnerloader.jsx';
+import Moviecard from './components/Moviecard.jsx';
 
 
 const API_BASE_URL= 'https://api.themoviedb.org/3';
-const API_KEY=import.meta.env.VITE_TMDB_API_KEY
+const API_KEY=import.meta.env.VITE_TMDB_API_KEY;
 
 const API_OPTIONS = {
   method: 'GET',
@@ -72,13 +73,13 @@ const App = () => {
        <Search searchvalue={searchvalue} setsearchvalue={setsearchvalue}/>
        </header>
 
-        <h2>All Movies</h2>
+        <h2 className='mb-4'>All Movies</h2>
        <section className='all-movies'>
 
        {isloading?<Spinnerloader/>:errormessage?<p className='text-red-500'>{errormessage}</p>:(
         <ul>
-         { moviedata.map((movie,idx)=>(
-          <p key={idx} className='text-xl text-teal-200'>{movie.title}</p>
+         { moviedata.map((movie)=>(
+          <Moviecard key={movie.id} movie={movie}/>
         ))}
         </ul>
          
