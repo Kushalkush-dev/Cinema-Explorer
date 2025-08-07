@@ -1,5 +1,6 @@
 import React, { use, useEffect, useState } from 'react'
 import Search from './components/Search.jsx'
+import Spinnerloader from './components/Spinnerloader.jsx';
 
 
 const API_BASE_URL= 'https://api.themoviedb.org/3';
@@ -29,9 +30,18 @@ const App = () => {
       throw new Error('Error fetching movies');
      }
       const data = await response.json();
-      setmoviedata(data.results)
+
+      if(data.results==='false' || data.results.length===0){
+        seterrormessage('No movies found.');
+        setmoviedata([])
+        return;
+      }
+      setmoviedata(data.results || [])
       console.log(data);
       setisloading(false)
+
+
+
     } catch (error) {
       seterrormessage('Error fetching movies. Try again');
       console.error('Error fetching movies:', error);
@@ -62,11 +72,20 @@ const App = () => {
        <Search searchvalue={searchvalue} setsearchvalue={setsearchvalue}/>
        </header>
 
-       {isloading?<p className='text-red-600 text-2xl'>Loading...</p>:errormessage?<p className='text-red-500'>{errormessage}</p>:(
-         moviedata.map((movie)=>(
-          <h1 className='text-xl'>{movie.title}</h1>
-        ))
+        <h2>All Movies</h2>
+       <section className='all-movies'>
+
+       {isloading?<Spinnerloader/>:errormessage?<p className='text-red-500'>{errormessage}</p>:(
+        <ul>
+         { moviedata.map((movie,idx)=>(
+          <p key={idx} className='text-xl text-teal-200'>{movie.title}</p>
+        ))}
+        </ul>
+         
        )}
+
+       </section>
+
 
        
 
