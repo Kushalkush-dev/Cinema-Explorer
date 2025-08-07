@@ -15,8 +15,8 @@ const App = () => {
       <div className='wrapper'>
        
        <header>
-
-        <img src="./hero-img.png" alt="" />
+        <img src="./logotp.png" alt="logo" className='absolute top-[5vw] left-[43vw] w-[14vw] h-[13vh] rotate-0 opacity-100'/>
+        <img src="./hero-img.png" alt="hero-image" />
         <h1>Discover <span className='text-gradient'>Movies</span> You’ll Love Instantly</h1>
 
        </header>
