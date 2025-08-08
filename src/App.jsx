@@ -3,6 +3,7 @@ import Search from './components/Search.jsx'
 import Spinnerloader from './components/Spinnerloader.jsx';
 import Moviecard from './components/Moviecard.jsx';
 import { useDebounce } from 'react-use';
+import { updatedatabase } from './appwrite.js';
 
 
 const API_BASE_URL= 'https://api.themoviedb.org/3';
@@ -45,6 +46,11 @@ const App = () => {
       }
       setmoviedata(data.results || [])
       console.log(data);
+
+      if(query && data.results.length>0 ){
+        await updatedatabase(searchvalue,data.results[0])
+      }
+      
     } catch (error) {
       seterrormessage('Error fetching movies. Try again');
       console.error('Error fetching movies:', error);
