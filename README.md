@@ -91,7 +91,8 @@ src/
 
 ## 🖼️ Screenshots (Optional)
 
-_Add a few screenshots or GIFs of your app here if you'd like._
+![Search Page](public/screenshots/search-section.png)
+![Trending Section](public/screenshots/trending-section.png)
 
 ---
 
@@ -126,6 +127,5 @@ Licensed under the [MIT License](LICENSE)
 Have questions or feedback?
 
 - GitHub: [@Kushalkush-dev](https://github.com/Kushalkush-dev/)
-- Email: your.email@example.com
-
+- Email: jkushal208@gmail.com
 ---
