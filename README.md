@@ -1,3 +1,4 @@
+
 # 🎬 Cinema Explorer
 
 [![React](https://img.shields.io/badge/React-v18+-blue?logo=react)](https://reactjs.org/)
@@ -41,31 +42,33 @@ _(Replace with your deployed link)_
 ```bash
 git clone https://github.com/your-username/cinema-explorer.git
 cd cinema-explorer
+```
 
-2. Install dependencies
-bash
-Copy
-Edit
+### 2. Install dependencies
+```bash
 npm install
-3. Create .env file
-Create a .env file in the root and add your Appwrite config:
+```
 
-env
-Copy
-Edit
+### 3. Create `.env` file
+Create a `.env` file in the root and add your Appwrite config:
+
+```env
 VITE_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
 VITE_APPWRITE_PROJECT_ID=your_project_id
 VITE_APPWRITE_DATABASE_ID=your_database_id
 VITE_APPWRITE_COLLECTION_ID=your_collection_id
-4. Start the app
-bash
-Copy
-Edit
+```
+
+### 4. Start the app
+```bash
 npm run dev
-📁 Project Structure
-bash
-Copy
-Edit
+```
+
+---
+
+## 📁 Project Structure
+
+```
 src/
 ├── assets/           # Icons, logos, images
 ├── components/       # Reusable components (Navbar, SearchBar, MovieCard)
@@ -74,24 +77,55 @@ src/
 ├── utils/            # Helper functions
 ├── App.jsx           # Main App component
 └── main.jsx          # React DOM renderer
-🧠 How It Works
-Each user search is saved in Appwrite's database.
+```
 
-The backend queries the most searched keywords.
+---
 
-The frontend uses that data to populate the Trending Movies section.
+## 🧠 How It Works
 
-🖼️ Screenshots (Optional)
-Add a few screenshots or GIFs of your app here if you'd like.
+- Each user search is saved in Appwrite's database.
+- The backend queries the most searched keywords.
+- The frontend uses that data to populate the **Trending Movies** section.
 
-🧱 Future Enhancements
-🔐 User Authentication (Appwrite Auth)
+---
 
-⭐ Add to Watchlist
+## 🖼️ Screenshots (Optional)
 
-🌗 Light/Dark Mode toggle
+_Add a few screenshots or GIFs of your app here if you'd like._
 
-💬 Movie reviews & ratings
+---
 
-📚 Genre-based filtering
+## 🧱 Future Enhancements
 
+- 🔐 User Authentication (Appwrite Auth)
+- ⭐ Add to Watchlist
+- 🌗 Light/Dark Mode toggle
+- 💬 Movie reviews & ratings
+- 📚 Genre-based filtering
+
+---
+
+## 🤝 Contributing
+
+Want to improve the project or fix a bug? Contributions are always welcome!
+
+```bash
+# Fork it, make changes, then create a PR 🚀
+```
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](LICENSE)
+
+---
+
+## 📬 Contact
+
+Have questions or feedback?
+
+- GitHub: [@your-username](https://github.com/your-username)
+- Email: your.email@example.com
+
+---
