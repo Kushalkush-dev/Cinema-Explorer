@@ -12,7 +12,7 @@ Cinema Explorer is a modern movie discovery web app built with **React.js**, **J
 
 ## 🌐 Live Demo
 
-🚀 [**View Live Site**](https://your-live-site-url.com)  
+🚀 [**View Live Site**](https://cinewind.vercel.app/)  
 _(Replace with your deployed link)_
 
 ---
