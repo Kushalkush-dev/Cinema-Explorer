@@ -31,7 +31,7 @@ const App = () => {
 
   const [trendingmovies, settrendingmovies] = useState([])
 
-  useDebounce(() => setdebouncedTerm(searchvalue), 500, [searchvalue]);
+  useDebounce(() => setdebouncedTerm(searchvalue), 700, [searchvalue]);
 
 
   const fetchtrendingmovielist=async ()=>{
@@ -100,8 +100,25 @@ const App = () => {
        <Search searchvalue={searchvalue} setsearchvalue={setsearchvalue}/>
        </header>
 
-        <h2 className='mb-4'>All Movies</h2>
+
+       {trendingmovies.length>0 && (
+        <section className='trending'>
+          <h2>Trending Movies</h2>
+          <ul>
+            {trendingmovies.map((movie,index)=>(
+              <li key={movie.$id}>
+                <p>{index+1}</p>
+                <img src={movie.poster_url} alt="./No-Poster.png" />
+                
+              </li>
+            ))}
+          </ul>
+          
+        </section>
+       )}
+
        <section className='all-movies'>
+        <h2 className='mb-4'>All Movies</h2>
 
        {isloading?<Spinnerloader/>:errormessage?<p className='text-red-500'>{errormessage}</p>:(
         <ul>
