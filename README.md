@@ -125,7 +125,7 @@ Licensed under the [MIT License](LICENSE)
 
 Have questions or feedback?
 
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: [@Kushalkush-dev](https://github.com/Kushalkush-dev/)
 - Email: your.email@example.com
 
 ---
