@@ -1,12 +1,97 @@
-# React + Vite
+# 🎬 Cinema Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-v18+-blue?logo=react)](https://reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3-blue?logo=tailwindcss)](https://tailwindcss.com/)
+[![Appwrite](https://img.shields.io/badge/Appwrite-Backend-red?logo=appwrite)](https://appwrite.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Currently, two official plugins are available:
+Cinema Explorer is a modern movie discovery web app built with **React.js**, **JavaScript**, and **Tailwind CSS**, backed by **Appwrite**. It tracks user searches in real-time and updates the trending section dynamically based on user interactions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌐 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🚀 [**View Live Site**](https://your-live-site-url.com)  
+_(Replace with your deployed link)_
+
+---
+
+## ✨ Features
+
+- 🔍 **Real-time Search** – Instantly search for movies by title.
+- 📈 **Trending Section** – Auto-updated based on user search trends.
+- 📊 **Search Tracking** – Tracks and stores user queries using Appwrite DB.
+- 🧱 **Component-Based UI** – Built using reusable React components.
+- 📱 **Mobile Responsive** – Designed to look great on all screen sizes.
+- 🛡️ **Backend with Appwrite** – Handles database and server-side logic.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js, JavaScript (ES6+), Tailwind CSS
+- **Backend**: Appwrite (Database, Authentication, Realtime)
+- **Deployment**: (Optional: Vercel / Netlify / Firebase Hosting)
+
+---
+
+## 🧰 Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/cinema-explorer.git
+cd cinema-explorer
+
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Create .env file
+Create a .env file in the root and add your Appwrite config:
+
+env
+Copy
+Edit
+VITE_APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+VITE_APPWRITE_PROJECT_ID=your_project_id
+VITE_APPWRITE_DATABASE_ID=your_database_id
+VITE_APPWRITE_COLLECTION_ID=your_collection_id
+4. Start the app
+bash
+Copy
+Edit
+npm run dev
+📁 Project Structure
+bash
+Copy
+Edit
+src/
+├── assets/           # Icons, logos, images
+├── components/       # Reusable components (Navbar, SearchBar, MovieCard)
+├── pages/            # Page components (Home, MovieDetails, etc.)
+├── services/         # Appwrite config and database API
+├── utils/            # Helper functions
+├── App.jsx           # Main App component
+└── main.jsx          # React DOM renderer
+🧠 How It Works
+Each user search is saved in Appwrite's database.
+
+The backend queries the most searched keywords.
+
+The frontend uses that data to populate the Trending Movies section.
+
+🖼️ Screenshots (Optional)
+Add a few screenshots or GIFs of your app here if you'd like.
+
+🧱 Future Enhancements
+🔐 User Authentication (Appwrite Auth)
+
+⭐ Add to Watchlist
+
+🌗 Light/Dark Mode toggle
+
+💬 Movie reviews & ratings
+
+📚 Genre-based filtering
+
