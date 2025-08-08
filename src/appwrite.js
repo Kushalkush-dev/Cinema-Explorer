@@ -38,7 +38,7 @@ export const updatedatabase=async (searchvalue,movie)=>{
     }
     
   } catch (error) {
-    console.log(error);
+    console.log("Error from updatedatabase function",error);
     
   }
 
@@ -46,3 +46,19 @@ export const updatedatabase=async (searchvalue,movie)=>{
   
 }
 
+export const trendingmoviesfn=async()=>{
+  try {
+
+   const result= await database.listDocuments(DATABASE_ID,COLLECTION_ID,[
+      Query.limit(5),
+      Query.orderDesc("count")
+  ])
+
+  return result.documents
+    
+  } catch (error) {
+    console.log("Error from trending movies function",error);
+    
+  }
+  
+}

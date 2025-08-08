@@ -3,7 +3,9 @@ import Search from './components/Search.jsx'
 import Spinnerloader from './components/Spinnerloader.jsx';
 import Moviecard from './components/Moviecard.jsx';
 import { useDebounce } from 'react-use';
-import { updatedatabase } from './appwrite.js';
+import { trendingmoviesfn, updatedatabase } from './appwrite.js';
+
+
 
 
 const API_BASE_URL= 'https://api.themoviedb.org/3';
@@ -27,7 +29,21 @@ const App = () => {
 
   const [debouncedTerm, setdebouncedTerm] = useState('')
 
+  const [trendingmovies, settrendingmovies] = useState([])
+
   useDebounce(() => setdebouncedTerm(searchvalue), 500, [searchvalue]);
+
+
+  const fetchtrendingmovielist=async ()=>{
+
+    try {
+      const  trendmovies=await trendingmoviesfn()
+      settrendingmovies(trendmovies)
+    } catch (error) {
+      console.log("Error fetching trending movies", error);     
+    }
+    
+  }
 
   const fetchmoviedata=async (query='')=>{
     setisloading(true)
@@ -65,6 +81,9 @@ const App = () => {
 
   },[debouncedTerm])
   
+  useEffect(()=>{
+    fetchtrendingmovielist()
+  },[])
 
   return (
    <main>
