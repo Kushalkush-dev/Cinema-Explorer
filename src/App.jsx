@@ -31,7 +31,9 @@ const App = () => {
 
   const [trendingmovies, settrendingmovies] = useState([])
 
-  useDebounce(() => setdebouncedTerm(searchvalue), 700, [searchvalue]);
+  const [trendingerrormsg, settrendingerrormsg] = useState('')
+
+  useDebounce(() => setdebouncedTerm(searchvalue), 500, [searchvalue]);
 
 
   const fetchtrendingmovielist=async ()=>{
@@ -40,7 +42,8 @@ const App = () => {
       const  trendmovies=await trendingmoviesfn()
       settrendingmovies(trendmovies)
     } catch (error) {
-      console.log("Error fetching trending movies", error);     
+      console.log("Error fetching trending movies", error);  
+      settrendingerrormsg('Error fetching trending movies. Try again later.')   
     }
     
   }
@@ -101,7 +104,8 @@ const App = () => {
        </header>
 
 
-       {trendingmovies.length>0 && (
+       {trendingmovies.length>0?
+       (
         <section className='trending'>
           <h2>Trending Movies</h2>
           <ul>
@@ -115,7 +119,9 @@ const App = () => {
           </ul>
           
         </section>
-       )}
+       ): <p>{trendingerrormsg}</p>
+        
+       }
 
        <section className='all-movies'>
         <h2 className='mb-4'>All Movies</h2>
