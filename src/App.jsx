@@ -7,6 +7,10 @@ import { trendingmoviesfn, updatedatabase } from './appwrite.js';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Favourites from './pages/Favourites.jsx';
 import Home from './pages/Home.jsx';
+import { ArrowLeftCircleIcon } from '@heroicons/react/24/solid';
+
+
+
 
 
 
@@ -50,7 +54,10 @@ setfavouritemovies(prev=>[...prev,movie])
 
       <div className='wrapper'>
 
-      <button onClick={handleNavigation} className={`p-2 max-w-max absolute ${isfavpage?`left-[2vw]`:`right-[2vw]`} transition-all duration-300 text-center top-[2vh] rounded-lg bg-blue-700 text-white hover:bg-blue-800 focus:ring-blue-300 font-medium`}>{isfavpage?" Go Back":"Go To Favourites"}</button>
+      <button onClick={handleNavigation} className={`p-2 max-w-max fixed   ${isfavpage?`left-[2vw]`:`right-[2vw]`} transition-all duration-300 text-center top-[2vh] rounded-lg bg-blue-700 text-white hover:bg-blue-800 focus:ring-blue-300 font-medium`}>
+       <span className='sm:hidden '>{isfavpage? <ArrowLeftCircleIcon className="size-6 text-white" />:"Favourites"}</span> 
+       <span className='hidden sm:block'>{isfavpage?"GoBack":"Go to Favourites"}</span>
+       </button>
        <Routes>
           <Route path='/' element={<Home favmoviefn={favouritemoviesfn}/>}/>
           <Route path='/home' element={<Home/>}/>
