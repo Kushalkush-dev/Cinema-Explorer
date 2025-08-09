@@ -1,9 +1,10 @@
 import React from 'react'
+import { TrashIcon } from '@heroicons/react/24/solid'
 
 const Favmoviecard = ({movie,deletefn}) => {
   const {title,vote_average,poster_path,original_language,release_date,id}=movie
   return (
-    <div className='movie-card'>
+    <div className='movie-card relative'>
       <img src={poster_path? `https://image.tmdb.org/t/p/w500/${poster_path}`:`./No-Poster.png`} alt="poster" />
 
       <div className='mt-4'>
@@ -22,7 +23,10 @@ const Favmoviecard = ({movie,deletefn}) => {
             
             deletefn(id)
             
-          }} className='bg-[#A90000] text-[#ffffff] text-sm font-medium p-1 rounded-lg hover:bg-[#a90000be]'>Remove</button>
+          }}>
+            <span className='sm:hidden'><TrashIcon className='size-5 text-red-600   '/></span>
+            <span className='hidden sm:inline sm:sm:bg-[#A90000]  sm:text-[#ffffff]  sm:text-sm sm:font-medium sm:p-1 sm:rounded-lg sm:hover:bg-[#a90000be]'>Remove</span>
+          </button>
           
         </div>
       </div>
