@@ -68,6 +68,13 @@ setfavouritemovies(prev=>[...prev,movie])
 }
 
 
+const deleteFavMovie=(id)=>{
+ setfavouritemovies(favouritemovies.filter((movie)=>movie.id!==id)
+)
+
+
+}
+
 
   return (
 
@@ -86,7 +93,7 @@ setfavouritemovies(prev=>[...prev,movie])
        <Routes>
           <Route path='/' element={<Home favmoviefn={favouritemoviesfn}/>}/>
           <Route path='/home' element={<Home/>}/>
-          <Route path='/fav' element={<Favourites favmovie={favouritemovies} setfavmovie={setfavouritemovies}/>}/>
+          <Route path='/fav' element={<Favourites favmovie={favouritemovies} setfavmovie={setfavouritemovies} deletefn={deleteFavMovie}/>}/>
       </Routes>
        
 

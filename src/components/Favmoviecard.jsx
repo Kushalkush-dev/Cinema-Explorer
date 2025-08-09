@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Favmoviecard = ({movie:{title,vote_average,poster_path,original_language,release_date}}) => {
+const Favmoviecard = ({movie,deletefn}) => {
+  const {title,vote_average,poster_path,original_language,release_date,id}=movie
   return (
     <div className='movie-card'>
       <img src={poster_path? `https://image.tmdb.org/t/p/w500/${poster_path}`:`./No-Poster.png`} alt="poster" />
@@ -17,10 +18,12 @@ const Favmoviecard = ({movie:{title,vote_average,poster_path,original_language,r
           <span>•</span>
           <p className='year'>{release_date?release_date.split('-')[0]:'N/A'}</p>
 
-          {/* <button onClick={()=>{
-            favmoviefn(movie)
-          }} className='bg-[#ce55d4cb] text-[#ffffff] text-sm font-medium p-1 rounded-lg hover:bg-[#ce55d4a6]'>Add to List</button>
-           */}
+          <button onClick={()=>{
+            
+            deletefn(id)
+            
+          }} className='bg-[#A90000] text-[#ffffff] text-sm font-medium p-1 rounded-lg hover:bg-[#a90000be]'>Remove</button>
+          
         </div>
       </div>
     </div>

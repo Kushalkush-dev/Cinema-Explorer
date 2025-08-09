@@ -1,14 +1,14 @@
 import React from 'react'
 import Favmoviecard from '../components/Favmoviecard'
 
-const Favourites = ({favmovie}) => {
+const Favourites = ({favmovie,deletefn}) => {
   return (
     <>
     <section className='all-movies mt-4'>
       {favmovie.length>0?( 
       <ul>
         { favmovie.map((elem)=>(
-        <Favmoviecard key={elem.id} movie={elem}/>
+        <Favmoviecard key={elem.id} movie={elem} deletefn={deletefn} />
         )
       )}
 
