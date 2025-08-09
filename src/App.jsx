@@ -30,8 +30,33 @@ const App = () => {
       navigate('/fav')
     }
   }
- 
+  
+  
+
+
+
   const [favouritemovies, setfavouritemovies] = useState([])
+
+  const [initialload, setinitialload] = useState(false)
+
+
+
+
+
+ useEffect(()=>{
+  if(initialload){
+     localStorage.setItem("favouritemovies",JSON.stringify(favouritemovies))
+  }
+  
+},[favouritemovies])
+
+useEffect(()=>{
+ const storedFavs = localStorage.getItem("favouritemovies");
+  if (storedFavs) {
+    setfavouritemovies(JSON.parse(storedFavs));
+  }
+  setinitialload(true)
+},[])
 
 
 const favouritemoviesfn=async (movie)=>{

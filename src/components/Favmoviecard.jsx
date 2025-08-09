@@ -17,10 +17,10 @@ const Favmoviecard = ({movie:{title,vote_average,poster_path,original_language,r
           <span>•</span>
           <p className='year'>{release_date?release_date.split('-')[0]:'N/A'}</p>
 
-          <button onClick={()=>{
+          {/* <button onClick={()=>{
             favmoviefn(movie)
           }} className='bg-[#ce55d4cb] text-[#ffffff] text-sm font-medium p-1 rounded-lg hover:bg-[#ce55d4a6]'>Add to List</button>
-          
+           */}
         </div>
       </div>
     </div>
