@@ -86,7 +86,7 @@ const deleteFavMovie=(id)=>{
 
       <div className='wrapper'>
 
-      <button onClick={handleNavigation} className={`p-2 max-w-max fixed   ${isfavpage?`left-[2vw]`:`right-[2vw]`} transition-all duration-300 text-center top-[2vh] rounded-lg bg-blue-700 text-white hover:bg-blue-800 focus:ring-blue-300 font-medium`}>
+      <button onClick={handleNavigation} className={`p-2 max-w-max fixed z-50  ${isfavpage?`left-[2vw]`:`right-[2vw]`} transition-all duration-300 text-center top-[2vh] rounded-lg bg-blue-700 text-white hover:bg-blue-800 focus:ring-blue-300 font-medium`}>
        <span className='sm:hidden '>{isfavpage? <ArrowLeftCircleIcon className="size-6 text-white" />:"Favourites"}</span> 
        <span className='hidden sm:block'>{isfavpage?"GoBack":"Go to Favourites"}</span>
        </button>
