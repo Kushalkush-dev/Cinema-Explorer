@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Moviecard = ({movie,favmoviefn}) => {
-  const {title,poster_path,release_date,original_language,vote_average}=movie;
+const Favmoviecard = ({movie:{title,vote_average,poster_path,original_language,release_date}}) => {
   return (
     <div className='movie-card'>
       <img src={poster_path? `https://image.tmdb.org/t/p/w500/${poster_path}`:`./No-Poster.png`} alt="poster" />
@@ -20,12 +19,13 @@ const Moviecard = ({movie,favmoviefn}) => {
 
           <button onClick={()=>{
             favmoviefn(movie)
-
           }} className='bg-[#ce55d4cb] text-[#ffffff] text-sm font-medium p-1 rounded-lg hover:bg-[#ce55d4a6]'>Add to List</button>
+          
         </div>
       </div>
     </div>
   )
-}
   
-export default Moviecard
+}
+
+export default Favmoviecard

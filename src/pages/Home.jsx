@@ -8,7 +8,7 @@ import { trendingmoviesfn, updatedatabase } from '../appwrite.js';
 
 
 
-const Home = () => {
+const Home = ({favmoviefn}) => {
 
 
 const API_BASE_URL= 'https://api.themoviedb.org/3';
@@ -125,7 +125,7 @@ const API_OPTIONS = {
        {isloading?<Spinnerloader/>:errormessage?<p className='text-red-500'>{errormessage}</p>:(
         <ul>
          { moviedata.map((movie)=>(
-          <Moviecard key={movie.id} movie={movie}/>
+          <Moviecard key={movie.id} movie={movie} favmoviefn={favmoviefn}/>
         ))}
         </ul>
          

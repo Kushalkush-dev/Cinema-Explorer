@@ -27,6 +27,19 @@ const App = () => {
     }
   }
  
+  const [favouritemovies, setfavouritemovies] = useState([])
+
+
+const favouritemoviesfn=async (movie)=>{
+if(favouritemovies.some(fav=>fav.id===movie.id))return
+
+setfavouritemovies(prev=>[...prev,movie])
+ 
+  
+}
+
+
+
   return (
 
     
@@ -37,11 +50,11 @@ const App = () => {
 
       <div className='wrapper'>
 
-      <button onClick={handleNavigation} className='p-2  max-w-max absolute right-[2vw] text-center top-[2vh] rounded-lg bg-blue-700 text-white hover:bg-blue-800 focus:ring-blue-300 font-medium'>{isfavpage?"Back":"Go To Favourites"}</button>
+      <button onClick={handleNavigation} className={`p-2 max-w-max absolute ${isfavpage?`left-[2vw]`:`right-[2vw]`} transition-all duration-300 text-center top-[2vh] rounded-lg bg-blue-700 text-white hover:bg-blue-800 focus:ring-blue-300 font-medium`}>{isfavpage?" Go Back":"Go To Favourites"}</button>
        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/fav' element={<Favourites/>}/>
+          <Route path='/' element={<Home favmoviefn={favouritemoviesfn}/>}/>
+          <Route path='/home' element={<Home/>}/>
+          <Route path='/fav' element={<Favourites favmovie={favouritemovies} setfavmovie={setfavouritemovies}/>}/>
       </Routes>
        
 
