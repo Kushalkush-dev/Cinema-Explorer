@@ -21,7 +21,7 @@ const Moviecard = ({movie,favmoviefn}) => {
           <button onClick={()=>{
             favmoviefn(movie)
 
-          }} className='bg-[#ce55d4cb] text-[#ffffff] text-sm font-medium p-1 rounded-lg hover:bg-[#ce55d4a6]'>Add to List</button>
+          }} className='bg-[#ce55d4cb] text-[#ffffff] text-sm font-medium p-1 rounded-lg hover:bg-[#ce55d47c] active:scale-85'>Add to List</button>
         </div>
       </div>
     </div>
